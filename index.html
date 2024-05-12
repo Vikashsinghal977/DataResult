@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Form</title>
+</head>
+<body>
+    <h1>Data Adding Form</h1>
+    <hr>
+    <form id="ActionForm">
+        <label for="name">Enter Your Name :</label>
+        <input type="text" id="Ninput">
+        <br>
+        <br>
+        <label for="DOB">Enter Your DOB :</label>
+        <input type="date" id="dobInput">
+        <br>
+        <br>
+        <label for="Massge">Enter Your Massage  :</label>
+        <input type="text" id="massInput">
+        <button type="submit"> Click Me</button>
+
+        <div id="result">
+
+        </div>
+    </form>
+
+
+
+    <script>
+
+        function storedata() {
+            const getName = document.getElementById("Ninput").value;
+            const getDOB = document.getElementById("dobInput").value;
+            const getMessage = document.getElementById("massInput").value;
+            console.log(getName);
+            console.log(getDOB);
+            console.log(getMessage);
+            const result = document.getElementById("result").innerHTML = `${getName}<br>${getDOB}<br>${getMessage}`
+        }
+        const FormName = document.getElementById("ActionForm");
+        FormName.addEventListener("submit",(Event)=>
+        {
+            Event.preventDefault();
+            storedata();
+        });
+    </script>
+</body>
+</html>
